@@ -1,0 +1,251 @@
+body
+{
+	background-color: #404040;
+	font-family: 'Lato', sans-serif;
+}
+
+#container /* hash jest dla unikatowego elementu, kropka dla klasy obiektów*/
+{
+	color: black;
+	width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo
+{
+	color: white;
+	margin-top: 20px;
+	font-size: 40px;
+	letter-spacing: 3px;
+	font-weight: 900;
+	text-align: center;
+}
+
+#menu
+{
+	background-color: #303030;
+	margin-top: 10px;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+#topbar
+{
+	background-color: #128870;
+	color: white;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#topbarL
+{
+	float: left;
+	padding: 10px;
+	width: 158px;
+	text-align: center;
+	border-right: 2px dotted #cccccc;
+	color: orange;
+	font-size: 30px;
+}
+
+#topbarR
+{
+	float: left;
+	padding: 20px;
+	padding-top: 40px;
+	width: 1160px;
+	font-size: 16px;
+	text-align: justify;
+
+}
+
+#sidebar
+{
+	float: left;
+	width: 148px;
+	min-height: 480px;
+	padding: 20px;
+	background-color: lightgrey;
+	text-align: center;
+	font-size: 18px;
+	border-right: 2px dotted #666666;
+}
+
+#content
+{
+	float: left;
+	padding: 40px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	width: 1320px;
+	background-color: #dedede;
+	min-height: 480px;
+	text-align: justify;
+}
+
+#footer
+{
+	clear: both;
+	color: white;
+	text-align: right;
+	padding: 5px;
+	padding-right: 0px;
+	font-size:12px;
+}
+
+.option
+{
+	float: left;
+	height: 25px;
+	width: 130px;
+	font-size: 18px;
+	padding: 10px;
+	border-right: 2px dotted #444444;
+	opacity: 0.8;
+}
+
+.option:hover
+{
+	background-color: #f36742;
+	cursor: pointer;
+	color: white;
+}
+
+.optionL
+{
+	font-size: 18px;
+	height: 25px;
+	padding: 10px;
+	border-bottom: 2px dotted #444444;
+}
+
+.optionL:hover
+{
+	background-color: #f36742;
+	color: white;
+	cursor: pointer;
+}
+
+.bigtitle
+{
+	font-size: 32px;
+	font-weight: 900;
+	letter-spacing: 2px;
+	color: orange;
+}
+
+.bigtitle2
+{
+	font-size: 32px;
+	font-weight: 900;
+	letter-spacing: 2px;
+}
+
+.dottedline
+{
+	height: 5px;
+	margin-top: 1.5px;
+	margin-bottom: 15px;
+	border-bottom: 2px dotted #444444;
+}
+
+a.tilelink
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a.tilelinkL
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+iframe{
+	width: 100%;
+	height: 410px;
+	border: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input{
+    text-align: center;
+}
+
+.tileIFrame, input[type=text], .myButton, .tableCol, .buttonDel, .searchButton, .buttonModify{
+    text-align: center;
+    font-size: 12px;
+    padding: 12px 0;
+    margin: 5px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+    float: left;
+    width: calc(20% - 10px);
+	background-color: white;
+}
+
+input[type=text] {
+	text-align: right;
+    padding: 12px 20px;
+    width: calc(80% - 10px);
+}
+
+.myButton {
+	text-decoration: none;
+    cursor: pointer;
+
+    width: calc(100% - 10px);
+	background-color: #f4bf42;
+}
+
+.myButton:hover {
+	background-color: #dda31a;
+}
+
+.tableCol{
+    min-height: 42px;
+	background-color: white;
+}
+
+.clrBoth{
+	clear: both;
+}
+
+.buttonDel{
+    border: 2px solid black;
+    background-color: brown;
+    padding: 12px 0;
+    width: calc(5% - 10px);
+}
+
+.buttonDel:hover{
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.buttonModify{
+    border: 2px solid black;
+    background-color: greenyellow;
+    padding: 12px 0;
+    width: calc(5% - 10px);
+}
+
+.buttonModify:hover{
+    background-color: darkolivegreen;
+    cursor: pointer;
+}
+
+.searchButton{
+    background-color: #4286f4;
+    color: white;
+}
+
+.searchButton:hover{
+    background-color: #005580;
+    cursor: pointer;
+}

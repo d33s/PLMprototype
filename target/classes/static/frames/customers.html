@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/rest.js"></script>
+	<link rel="stylesheet" href="../style.css" type="text/css"/>
+	<link rel="stylesheet" href="../fontello/css/fontello.css" type="text/css">
+</head>
+
+<body style="background-color: #dedede;">
+
+	<div id="iframeContentFull" style="text-align: center;">
+		<form>
+			<div class="tileIFrame">Name:</div>
+            <input type="text" name="customerName" value="Name" onfocus="if (this.value=='Name') this.value='';">
+			<div class="tileIFrame">Address:</div>
+            <input type="text" name="address" value="Address" onfocus="if (this.value=='Address') this.value='';">
+		</form>
+		<br/>
+		<div style="clear:both;"></div>
+		<button class="myButton" onclick = "addToDatabase('customer')">Submit</button>
+		<div id="response"></div>
+	</div>
+	
+</body>
+
+</html>
