@@ -8,7 +8,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-
 @Entity
 @Table(name = "assemblies")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -27,6 +26,18 @@ class Assembly {
     @JsonProperty("assemblyName")
     @Column(name="assemblyName")
     private String assemblyName;
+
+    @Getter @Setter
+    @Column(name="object")
+    @JsonProperty("object")
+    @Lob
+    private byte[] object;
+
+    @Getter @Setter
+    @Column(name="path")
+    @JsonProperty("path")
+    @Lob
+    private String path;
 
     public Assembly() { }
 

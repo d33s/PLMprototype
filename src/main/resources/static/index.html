@@ -2,21 +2,30 @@
 <html lang="pl">
 
 <head>
+
+    <title>PLM</title>
+
 	<meta charset = "utf-8"/> <!-- kodowanie strony -->
-	<title>PLM</title>
 	<meta name="description" content="PLM"/>
 	<meta name="keywords" content="html, css"/>  
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> <!-- zeby wszystko działało na internet explorerze-->
-	<link rel="stylesheet" href="style.css" type="text/css"/>
+
+    <link rel="stylesheet" href="style.css" type="text/css"/>
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/sendingLargeObjects.js"></script>
 	<script type="text/javascript" src="js/framesChange.js"></script>
 	<script type="text/javascript" src="js/rest.js"></script>
+
+    <script type="text/javascript" src="../gl/three.js"></script>
+    <script type="text/javascript" src="../gl/OrbitControls.js"></script>
+    <script type="text/javascript" src="../gl/OBJloader.js"></script>
+
 </head>
 
 <body>
-
 	<div id="container">
 		<div id="menu">
 			<span class="tilelink"><div class="option" id="mapFold" style="width: 158px;"><i class="icon-map"></i></div></span>
@@ -55,7 +64,7 @@
 			<div class="dottedline"></div>
 
 			<iframe id="contentFrame" src="frames/hello.html">
-                <p>Your browser does not support iframes.</p>
+                Your browser does not support iframes.
             </iframe>
 
 		</div>
@@ -66,40 +75,7 @@
 
 	</div>
 
-	<script>
-	
-		$( "#menu" ).click(function() {	
-			if (document.getElementById("contentFrame").src != "http://localhost:8080/frames/hello.html" && document.getElementById("sidebar").style.display == "none"){
-					$("#content").animate({ 'width': '1130px'}, 400, function() {
-						$( "#sidebar" ).toggle( "slide" );
-					});
-					//console.log(document.getElementById("sidebar").style.display);
-			}
-			else if (document.getElementById("contentFrame").src == "http://localhost:8080/frames/hello.html" && document.getElementById("sidebar").style.display != "none"){
-					$( "#sidebar" ).toggle( "slide", function(){
-						$("#content").animate({ 'width': '1320px'}, 400);
-					});
-			}
-		});
-
-		$("#mapFold").click(function(){
-                if(document.getElementById("topbar").style.display === "none") {
-                    $( "iframe" ).animate({'min-height': '410px'}, 400);
-                    $("#content").animate({'min-height': '480px'}, 400);
-                    $("#sidebar").animate({'min-height': '480px'}, 400, function(){
-                        $("#topbar").slideToggle( "slow" );
-                    });
-                }
-                else{
-                    $("#topbar").slideToggle( "slow", function(){
-                        $("#content").animate({'min-height': '640px'}, 400);
-                        $("#sidebar").animate({'min-height': '640px'}, 400);
-                        $( "iframe" ).animate({'min-height': '570px'}, 400);
-                    });
-                }
-        });
-
-	</script>
+    <script type="text/javascript" src="js/fancyMovements.js"></script>
 
 </body>
 

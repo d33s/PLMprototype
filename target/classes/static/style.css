@@ -164,7 +164,7 @@ a.tilelinkL
 	text-decoration: none;
 }
 
-iframe{
+#contentFrame{
 	width: 100%;
 	height: 410px;
 	border: none;
@@ -176,7 +176,7 @@ input{
     text-align: center;
 }
 
-.tileIFrame, input[type=text], .myButton, .tableCol, .buttonDel, .searchButton, .buttonModify{
+.tileIFrame, input[type=text], input[type=file] + label, .myButton, .tableCol, .buttonDel, .button3d, .searchButton, .buttonModify{
     text-align: center;
     font-size: 12px;
     padding: 12px 0;
@@ -194,11 +194,24 @@ input[type=text] {
     padding: 12px 20px;
     width: calc(80% - 10px);
 }
+input[type=file]{
+    display: none;
+}
+
+input[type=file] + label {
+	text-align: right;
+    padding: 12px 20px;
+    background-color: orange;
+    width: calc(80% - 10px);
+}
+
+input[type=file]+label:hover{
+    background-color: darkorange;
+}
 
 .myButton {
 	text-decoration: none;
     cursor: pointer;
-
     width: calc(100% - 10px);
 	background-color: #f4bf42;
 }
@@ -223,8 +236,20 @@ input[type=text] {
     width: calc(5% - 10px);
 }
 
+.button3d{
+    border: 2px solid black;
+    background-color: royalblue;
+    padding: 12px 0;
+    width: calc(5% - 10px);
+}
+
 .buttonDel:hover{
     background-color: darkred;
+    cursor: pointer;
+}
+
+.button3d:hover{
+    background-color: midnightblue;
     cursor: pointer;
 }
 
@@ -249,3 +274,35 @@ input[type=text] {
     background-color: #005580;
     cursor: pointer;
 }
+
+#renderBody{
+    padding:0;
+    border:0;
+    text-align: center;
+    background-color: #dedede;
+}
+
+#btnSubmitSearchBar, #textSearchBar, #selectSearchType{
+    text-align: center;
+    font-size: 12px;
+    padding: 12px 0;
+    margin: 5px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+    float: left;
+    width: calc(20% - 10px);
+    background-color: royalblue;
+    color: white;
+}
+
+#selectSearchType{
+    padding-left: 15px;
+}
+
+#searchBarForm option{
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+
