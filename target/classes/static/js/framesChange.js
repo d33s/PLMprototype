@@ -32,7 +32,7 @@ function changeFrameContext(operationName) {
 
     switch (operationName) {
         case 'Show':
-            showDBrecords("all", function () {
+            requestDataAndShowDBRecords("all", function () {
                     addSearchBar();
                     if (document.getElementById('subSiteName').innerHTML === "#Assemblies") {
                         addObjShowOption();
@@ -47,7 +47,7 @@ function changeFrameContext(operationName) {
             show();
             break;
         case 'Delete':
-            showDBrecords("all", function () {
+            requestDataAndShowDBRecords("all", function () {
                 addSearchBar();
                 addDelOption();
                 if (document.getElementById('subSiteName').innerHTML === "#Parts") {
@@ -64,7 +64,7 @@ function changeFrameContext(operationName) {
                 assemblyOrNot = "all"
             }
 
-            showDBrecords(assemblyOrNot, function () {
+            requestDataAndShowDBRecords(assemblyOrNot, function () {
                 addSearchBar();
                 addModifyOption();
                 if (document.getElementById('subSiteName').innerHTML === "#Parts") {

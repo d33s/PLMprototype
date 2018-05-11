@@ -1,10 +1,19 @@
 package com.enterprisesys.plm.assemblies;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.ContextLoader;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -17,6 +26,7 @@ public class AssembliesController {
     public String uploadFile(
             @RequestParam("assemblyName") String name,
             @RequestParam("file") MultipartFile uploadFile) {
+
         if (uploadFile.isEmpty()) {
             return "Select file first!";
         }

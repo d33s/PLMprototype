@@ -22,34 +22,43 @@ public class AssembliesService {
     private AssembliesRepo assembliesRepository;
 
     //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "C:\\Users\\stelm\\Documents\\GitHub\\PLMprototype\\src\\main\\resources\\static\\obj\\";
+    private final static String dir = System.getProperty("user.dir");
+    private static String UPLOADED_FOLDER = dir + "\\src\\main\\resources\\static\\obj\\";
+    private static String UPLOADED_FOLDER_TARGET = dir + "\\target\\classes\\static\\obj\\";
 
-    class AssemblyWithoutObj{
-        @Getter @Setter
+    class AssemblyWithoutObj {
+        @Getter
+        @Setter
         private Integer idAssembly;
-        @Getter @Setter
+        @Getter
+        @Setter
         private String assemblyName;
-        @Getter @Setter
+        @Getter
+        @Setter
         private String assemblyPath;
 
-        private AssemblyWithoutObj(){}
+        private AssemblyWithoutObj() {
+        }
 
-        private AssemblyWithoutObj(Integer id, String name, String path){
+        private AssemblyWithoutObj(Integer id, String name, String path) {
             this.setIdAssembly(id);
             this.setAssemblyName(name);
             this.setAssemblyPath(path);
         }
     }
 
-    class AssemblyToModif{
-        @Getter @Setter
+    class AssemblyToModif {
+        @Getter
+        @Setter
         private Integer idAssembly;
-        @Getter @Setter
+        @Getter
+        @Setter
         private String assemblyName;
 
-        private AssemblyToModif(){}
+        private AssemblyToModif() {
+        }
 
-        private AssemblyToModif(Integer id, String name){
+        private AssemblyToModif(Integer id, String name) {
             this.setIdAssembly(id);
             this.setAssemblyName(name);
         }
@@ -79,14 +88,14 @@ public class AssembliesService {
         return assembliesToModify;
     }
 
-    public AssemblyWithoutObj getAssembly(Integer id){
+    public AssemblyWithoutObj getAssembly(Integer id) {
         Assembly searchedAssembly = assembliesRepository.findById(id).orElse(null);
 
         AssemblyWithoutObj searchedAssemblyWithoutObj = new AssemblyWithoutObj(searchedAssembly.getIdAssembly(), searchedAssembly.getAssemblyName(), searchedAssembly.getPath());
         return searchedAssemblyWithoutObj;
     }
 
-    public void addAssembly(Assembly assembly){
+    public void addAssembly(Assembly assembly) {
         assembliesRepository.save(assembly);
     }
 
@@ -102,30 +111,37 @@ public class AssembliesService {
         assembliesRepository.deleteById(id);
     }
 
-    public void dropAssembliesTable(){
+    public void dropAssembliesTable() {
         assembliesRepository.deleteAll();
     }
 
     public void saveUploadedFile(String name, MultipartFile file) throws IOException {
 
-            if (!file.isEmpty()) {
-                byte[] bytes = file.getBytes();
-                Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
-                Files.write(path, bytes);
-            }
-            else System.out.println("empty file");
+        if (!file.isEmpty()) {
+            byte[] bytes = file.getBytes();
+            //sapis w src
+            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+            Files.write(path, bytes);
+            //zapis w targecie
+            Path pathTarget = Paths.get(UPLOADED_FOLDER_TARGET + file.getOriginalFilename());
+            Files.write(pathTarget, bytes);
+        } else System.out.println("empty file");
 
-            Assembly assembly = new Assembly();
-            try {
-                assembly.setAssemblyName(name);
-                assembly.setObject(file.getBytes());
-                assembly.setPath("../obj/" + file.getOriginalFilename());
-            }
-            catch (IOException e){
-                e.printStackTrace();
-            }
+        Assembly assembly = new Assembly();
+        assembly.setAssemblyName(name);
+        assembly.setPath("../obj/" + file.getOriginalFilename()); //tu sie ustala sciezka do wpisania do tabeli
 
-            assembliesRepository.save(assembly);
+//        VERSION WITH SAVING BLOB INTO DB
+//            try {
+//                assembly.setAssemblyName(name);
+//                assembly.setObject(file.getBytes());
+//                assembly.setPath("../obj/" + file.getOriginalFilename());
+//            }
+//            catch (IOException e){
+//                e.printStackTrace();
+//            }
+
+        assembliesRepository.save(assembly);
     }
 
 }
