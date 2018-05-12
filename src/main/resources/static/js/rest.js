@@ -37,19 +37,21 @@ function getSubSiteAddress(manuallySet){
     if (manuallySet !== undefined){modifyWhat = manuallySet;}
     else {modifyWhat = document.getElementById('subSiteName').innerHTML;}
 
+    var domain = window.location.origin;
+
     var sendEqUrl = '';
     switch (modifyWhat) {
         case '#Customers':
-            sendEqUrl = "http://localhost:8080/customers/";
+            sendEqUrl = domain + "/customers/";
             break;
         case '#Orders':
-            sendEqUrl = "http://localhost:8080/orders/";
+            sendEqUrl = domain + "/orders/";
             break;
         case '#Assemblies':
-            sendEqUrl = "http://localhost:8080/assemblies/";
+            sendEqUrl = domain + "/assemblies/";
             break;
         case '#Parts':
-            sendEqUrl = "http://localhost:8080/parts/";
+            sendEqUrl = domain + "/parts/";
             break;
     }
     return sendEqUrl;
@@ -373,7 +375,7 @@ function submitSearchForm() {
     var formData = {};
     formData.searchType = frameDoc.getElementById('selectSearchType').value;
     formData.userInput = frameDoc.getElementById('textSearchBar').value;
-    RESTrequest('POST', 'http://localhost:8080/parts/search', formData, responseProcessor);
+    RESTrequest('POST', window.location.href + 'parts/search', formData, responseProcessor);
 }
 
 function responseProcessor(rcvd) {

@@ -27,7 +27,7 @@ manager.onProgress = function (item, loaded, total) {
 };
 
 var textureLoader = new THREE.TextureLoader(manager);
-var texture = textureLoader.load('../img/mosaic.jpg');
+var texture = textureLoader.load('../img/black.jpg');
 
 var onProgress = function (xhr) {
     if (xhr.lengthComputable) {

@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371f5b02-1bca-4c5f-8637-6dc5e9456073" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/obj/iphone.obj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/obj/iphone.obj" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesController.class" afterPath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesService$AssemblyToModif.class" afterPath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesService$AssemblyToModif.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesService$AssemblyWithoutObj.class" afterPath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesService$AssemblyWithoutObj.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesService.class" afterPath="$PROJECT_DIR$/target/classes/com/enterprisesys/plm/assemblies/AssembliesService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesController.java" afterPath="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesService.java" afterPath="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/frames/3dViewer.html" afterPath="$PROJECT_DIR$/src/main/resources/static/frames/3dViewer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/frames/customers.html" afterPath="$PROJECT_DIR$/src/main/resources/static/frames/customers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/frames/orders.html" afterPath="$PROJECT_DIR$/src/main/resources/static/frames/orders.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/frames/parts.html" afterPath="$PROJECT_DIR$/src/main/resources/static/frames/parts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/framesChange.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/framesChange.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/gl/objload.js" afterPath="$PROJECT_DIR$/src/main/resources/static/gl/objload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/rest.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/rest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/frames/3dViewer.html" afterPath="$PROJECT_DIR$/target/classes/static/frames/3dViewer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/frames/customers.html" afterPath="$PROJECT_DIR$/target/classes/static/frames/customers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/frames/orders.html" afterPath="$PROJECT_DIR$/target/classes/static/frames/orders.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/frames/parts.html" afterPath="$PROJECT_DIR$/target/classes/static/frames/parts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/framesChange.js" afterPath="$PROJECT_DIR$/target/classes/static/js/framesChange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/rest.js" afterPath="$PROJECT_DIR$/target/classes/static/js/rest.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +20,21 @@
       <file leaf-file-name="rest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/rest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-495">
-              <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+            <state relative-caret-position="162">
+              <caret line="37" column="73" lean-forward="true" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
               <folding>
-                <marker date="1526057024567" expanded="true" signature="7830:7856" ph="..." />
+                <marker date="1526126054988" expanded="true" signature="7824:7850" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objload.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/gl/objload.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,17 +43,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state relative-caret-position="396">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,7 +62,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1048">
+            <state relative-caret-position="363">
               <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
               <folding />
             </state>
@@ -81,8 +72,8 @@
       <file leaf-file-name="AssembliesService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3102">
-              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+            <state relative-caret-position="3201">
+              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,11 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>assemblyName</find>
-      <find>callba</find>
-      <find>all-of</find>
-      <find>userInput</find>
-      <find>whatToSearchFor</find>
       <find>better</find>
       <find>addS</find>
       <find>divSe</find>
@@ -122,6 +108,11 @@
       <find>document.getElementById(&quot;contentFrame&quot;).contentWindow.document</find>
       <find>frameDoc</find>
       <find>multipa</find>
+      <find>localhost</find>
+      <find>loca</find>
+      <find>localho</find>
+      <find>locati</find>
+      <find>domain</find>
     </findStrings>
     <replaceStrings>
       <replace>isThisFirstClickValid</replace>
@@ -159,16 +150,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/parts/PartsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/parts/PartsController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/gl/objload.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/framesChange.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/frames/3dViewer.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/frames/parts.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/frames/customers.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/frames/orders.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/rest.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/rest.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/gl/objload.js" />
       </list>
     </option>
   </component>
@@ -201,6 +192,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -290,7 +282,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -439,11 +430,12 @@
       <workItem from="1525947788511" duration="35931000" />
       <workItem from="1526033803344" duration="23860000" />
       <workItem from="1526069170712" duration="4159000" />
+      <workItem from="1526115768456" duration="5047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247153000" />
+    <option name="totallyTimeSpent" value="252200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="797" y="-1451" width="2489" height="1462" extended-state="6" />
@@ -679,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/gl/objload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/frames/customers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -795,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="891">
           <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,20 +820,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/rest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495">
-          <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-          <folding>
-            <marker date="1526057024567" expanded="true" signature="7830:7856" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3102">
-          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        <state relative-caret-position="3201">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -859,14 +831,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/enterprisesys/plm/assemblies/AssembliesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1048">
+        <state relative-caret-position="363">
           <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding />
         </state>
@@ -874,8 +846,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        <state relative-caret-position="396">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/rest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="37" column="73" lean-forward="true" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
+          <folding>
+            <marker date="1526126054988" expanded="true" signature="7824:7850" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/gl/objload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
