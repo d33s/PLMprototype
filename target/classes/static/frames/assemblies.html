@@ -16,9 +16,9 @@
 	<div id="iframeContentFull" style="text-align: center;">
 		<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
 			<div class="tileIFrame">Name:</div>
-            <input type="text" name="assemblyName" value="Name" onfocus="if (this.value=='Name') this.value='';">
+            <input type="text" name="assemblyName" value="Name" onfocus="if (this.value=='Name') this.value='';"/>
 			<div class="tileIFrame">Object:</div>
-            <input type="file" name="file" id="file">
+            <input type="file" name="file" id="file"/>
             <label for="file" id="fileLabel">Choose a file</label>
             <input type="submit" value="Submit" id="btnSubmit" class="myButton"/>
 		</form>

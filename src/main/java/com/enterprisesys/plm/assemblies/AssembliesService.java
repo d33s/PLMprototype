@@ -128,18 +128,15 @@ public class AssembliesService {
         } else System.out.println("empty file");
 
         Assembly assembly = new Assembly();
-        assembly.setAssemblyName(name);
-        assembly.setPath("../obj/" + file.getOriginalFilename()); //tu sie ustala sciezka do wpisania do tabeli
-
 //        VERSION WITH SAVING BLOB INTO DB
-//            try {
-//                assembly.setAssemblyName(name);
-//                assembly.setObject(file.getBytes());
-//                assembly.setPath("../obj/" + file.getOriginalFilename());
-//            }
-//            catch (IOException e){
-//                e.printStackTrace();
-//            }
+            try {
+                assembly.setAssemblyName(name);
+                assembly.setObject(file.getBytes());
+                assembly.setPath("../obj/" + file.getOriginalFilename());
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
 
         assembliesRepository.save(assembly);
     }
