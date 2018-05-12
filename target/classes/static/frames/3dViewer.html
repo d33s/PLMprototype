@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <title>3dViewer</title>
+
+    <script type="text/javascript" src="../js/rest.js"></script>
+    <script type="text/javascript" src="../gl/three.js"></script>
+    <script type="text/javascript" src="../gl/OrbitControls.js"></script>
+    <script type="text/javascript" src="../gl/OBJloader.js"></script>
+
+    <style>
+        canvas, #canvasContainer{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+</head>
+
+<body onload="animate();">
+
+    <div id="canvasContainer" style="background-color: yellow;">
+        <canvas id="myCanvas" style="background-color: red">
+            Your browser does not seem to support
+            HTML5 canvas.
+        </canvas>
+    </div>
+
+    <script src="../gl/objload.js"></script>
+
+</body>
+
+</html>

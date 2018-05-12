@@ -1,17 +1,16 @@
-function changeFrame(frameName){
-	document.getElementById('contentFrame').src = frameName;
+function changeFrame(frameName) {
+    document.getElementById('contentFrame').src = frameName;
 }
 
-function changeTitle(title){
+function changeTitle(title) {
     document.getElementById('subSiteName').innerHTML = title;
 }
 
-function changeOption(title){
+function changeOption(title) {
     document.getElementById('optionSiteName').innerHTML = title;
 }
 
-function show(){
-
+function show() {
     var showWhat = document.getElementById('subSiteName').innerHTML;
     switch (showWhat) {
         case '#Customers':
@@ -29,30 +28,53 @@ function show(){
     }
 }
 
-function changeFrameContext(operationName){
+function changeFrameContext(operationName) {
 
     switch (operationName) {
         case 'Show':
-            showDBrecords("all", addSearchBar);
+            requestDataAndShowDBRecords("all", function () {
+                    addSearchBar();
+                    if (document.getElementById('subSiteName').innerHTML === "#Assemblies") {
+                        addObjShowOption();
+                    }
+                    if (document.getElementById('subSiteName').innerHTML === "#Parts") {
+                        replaceSearchBarWithBetterSearchBar();
+                    }
+                }
+            );
             break;
         case 'Add':
             show();
             break;
         case 'Delete':
-            showDBrecords("all", function(){
+            requestDataAndShowDBRecords("all", function () {
                 addSearchBar();
                 addDelOption();
+                if (document.getElementById('subSiteName').innerHTML === "#Parts") {
+                    replaceSearchBarWithBetterSearchBar();
+                }
             });
             break;
         case 'Modify':
-            showDBrecords("all", function(){
+            var assemblyOrNot;
+            if (document.getElementById('subSiteName').innerHTML === "#Assemblies") {
+                assemblyOrNot = "all/modif";
+            }
+            else {
+                assemblyOrNot = "all"
+            }
+
+            requestDataAndShowDBRecords(assemblyOrNot, function () {
                 addSearchBar();
                 addModifyOption();
+                if (document.getElementById('subSiteName').innerHTML === "#Parts") {
+                    replaceSearchBarWithBetterSearchBar();
+                }
             });
             break;
         default:
             break;
     }
-    changeOption("#"+operationName);
+    changeOption("#" + operationName);
 }
 

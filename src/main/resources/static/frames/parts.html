@@ -11,7 +11,7 @@
 <body style="background-color: #dedede;">
 
 	<div id="iframeContentFull" style="text-align: center;">
-		<form>
+		<form id="searchBarForm">
 			<div class="tileIFrame">Part:</div>
             <input type="text" name="partName" value="partName" onfocus="if (this.value=='partName') this.value='';">
 			<div class="tileIFrame">Assembly:</div>
@@ -19,10 +19,10 @@
 		</form>
 		<br/>
 		<div style="clear:both;"></div>
-		<button class="myButton" onclick = "addToDatabase('part')">Submit</button>
+		<button class="myButton" onclick = "addToDatabase('#Parts')">Submit</button>
 		<div id="response"></div>
 	</div>
-	
+
 </body>
 
 </html>

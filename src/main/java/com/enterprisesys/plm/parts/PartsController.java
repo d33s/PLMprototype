@@ -1,8 +1,12 @@
 package com.enterprisesys.plm.parts;
 
+
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,6 +18,39 @@ public class PartsController {
     @RequestMapping("/parts/all")
     public List<Part> getAllParts() {
         return partsService.getAllParts();
+    }
+
+    @RequestMapping("/parts/all-of-assembly/{assemblyName}")
+    public List<Part> getPartsOfAssembly(@PathVariable String assemblyName) {
+        return partsService.getAllPartsOfAssembly(assemblyName);
+    }
+
+    static class SearchEntity{
+        @Getter @Setter
+        private String searchType;
+        @Getter @Setter
+        private String userInput;
+
+        SearchEntity(){};
+
+        SearchEntity(String search, String name){
+            this.searchType = search;
+            this.userInput = name;
+        }
+    }
+
+    @RequestMapping("/parts/search")
+    public List<PartsService.PartNoAssemblyName> getSortedPartsOfSingleAssembly(@RequestBody SearchEntity search) {
+        ArrayList<PartsService.PartNoAssemblyName> toReturn = new ArrayList<>();
+        if(search.getSearchType().equals("searchID")){
+            Integer id = Integer.parseInt(search.getUserInput());
+            PartsService.PartNoAssemblyName searchResult = new PartsService.PartNoAssemblyName(partsService.getPart(id).getIdPart(), partsService.getPart(id).getPartName());
+            toReturn.add(searchResult);
+        }
+        else if(search.getSearchType().equals("searchAssembly")){
+            toReturn.addAll(partsService.getSortedPartsOfAssembly(search.getUserInput())) ;
+        }
+        return toReturn;
     }
 
     @RequestMapping("/parts/{id}")
