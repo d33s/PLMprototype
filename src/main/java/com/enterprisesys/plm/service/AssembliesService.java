@@ -1,13 +1,13 @@
-package com.enterprisesys.plm.assemblies;
+package com.enterprisesys.plm.service;
 
+import com.enterprisesys.plm.repository.AssembliesRepo;
+import com.enterprisesys.plm.model.Assembly;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,7 +26,7 @@ public class AssembliesService {
     private static String UPLOADED_FOLDER = dir + "\\src\\main\\resources\\static\\obj\\";
     private static String UPLOADED_FOLDER_TARGET = dir + "\\target\\classes\\static\\obj\\";
 
-    class AssemblyWithoutObj {
+    public class AssemblyWithoutObj {
         @Getter
         @Setter
         private Integer idAssembly;
@@ -47,7 +47,7 @@ public class AssembliesService {
         }
     }
 
-    class AssemblyToModif {
+    public class AssemblyToModif {
         @Getter
         @Setter
         private Integer idAssembly;

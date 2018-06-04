@@ -1,6 +1,6 @@
-package com.enterprisesys.plm.parts;
+package com.enterprisesys.plm.repository;
 
-import com.enterprisesys.plm.assemblies.Assembly;
+import com.enterprisesys.plm.model.Part;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

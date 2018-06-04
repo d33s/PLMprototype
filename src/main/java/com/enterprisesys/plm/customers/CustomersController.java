@@ -1,5 +1,6 @@
 package com.enterprisesys.plm.customers;
 
+import com.enterprisesys.plm.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
