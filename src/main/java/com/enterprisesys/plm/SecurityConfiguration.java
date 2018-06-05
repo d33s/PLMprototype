@@ -61,6 +61,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .accessDeniedPage("/access-denied");
 
         http.authorizeRequests().antMatchers("/resources/**").permitAll().anyRequest().permitAll();
+        http.headers().frameOptions().disable();
 
     }
 
