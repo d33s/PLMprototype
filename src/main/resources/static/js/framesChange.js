@@ -25,6 +25,12 @@ function show() {
         case '#Parts':
             document.getElementById('contentFrame').src = "frames/parts.html";
             break;
+        case '#Employees':
+            document.getElementById('contentFrame').src = "frames/employees.html";
+            break;
+        case '#Warehouse':
+            document.getElementById('contentFrame').src = "frames/warehouse.html";
+            break;
     }
 }
 
@@ -37,6 +43,10 @@ function changeFrameContext(operationName) {
                     if (document.getElementById('subSiteName').innerHTML === "#Assemblies") {
                         addObjShowOption();
                     }
+                    else if (document.getElementById('subSiteName').innerHTML === "#Warehouse"){
+                        addPdfShowOption();
+                    }
+
                     if (document.getElementById('subSiteName').innerHTML === "#Parts") {
                         replaceSearchBarWithBetterSearchBar();
                     }
@@ -57,7 +67,7 @@ function changeFrameContext(operationName) {
             break;
         case 'Modify':
             var assemblyOrNot;
-            if (document.getElementById('subSiteName').innerHTML === "#Assemblies") {
+            if (document.getElementById('subSiteName').innerHTML === "#Assemblies" || document.getElementById('subSiteName').innerHTML === "#Warehouse") {
                 assemblyOrNot = "all/modif";
             }
             else {

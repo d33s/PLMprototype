@@ -53,6 +53,12 @@ function getSubSiteAddress(manuallySet){
         case '#Parts':
             sendEqUrl = domain + "/parts/";
             break;
+        case '#Employees':
+            sendEqUrl = domain + "/employees/";
+            break;
+        case '#Warehouse':
+            sendEqUrl = domain + "/warehouse/";
+            break;
     }
     return sendEqUrl;
 }
@@ -328,6 +334,25 @@ function PopupCenter(url, title, w, h) {
     var wind = window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
     wind.path = file3DPath;
     return wind;
+}
+
+function addPdfShowOption() {
+
+    var frameDoc = document.getElementById("contentFrame").contentWindow.document;
+    var newWidthFinal = "calc(15% - 10px)";
+    frameDoc.getElementsByClassName("tileIFrame")[0].style.width = newWidthFinal;
+    frameDoc.getElementsByClassName("searchButton")[0].style.width = newWidthFinal;
+    for (var l = 0; l < frameDoc.getElementsByClassName('spanRow').length; l++) {
+        frameDoc.getElementsByClassName("spanRow")[l].children[0].style.width = newWidthFinal;
+        var showButton = document.createElement('div');
+        showButton.className = "button3d";
+        showButton.innerHTML = "Show";
+        showButton.id = frameDoc.getElementsByClassName("spanRow")[l].children[4].innerHTML;
+        showButton.addEventListener("click", function () {
+            PopupCenter(this.id, '', '900', '500');
+        });
+        frameDoc.getElementsByClassName("spanRow")[l].appendChild(showButton);
+    }
 }
 
 function replaceSearchBarWithBetterSearchBar() {

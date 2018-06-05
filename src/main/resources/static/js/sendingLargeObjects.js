@@ -1,17 +1,20 @@
 $(document).ready(function () {
 
-    $("#btnSubmit").click(function (event) {
-
+    $("#btnSubmitToAssemblies").click(function (event) {
         //stop submit the form, we will post it manually.
         event.preventDefault();
+        fire_ajax_submit("/assemblies/upload");
+    });
 
-        fire_ajax_submit();
-
+    $("#btnSubmitToWarehouse").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+        fire_ajax_submit("/warehouse/upload");
     });
 
 });
 
-function fire_ajax_submit() {
+function fire_ajax_submit(urlToSend) {
 
     // Get form
     var form = $('#fileUploadForm')[0];
@@ -25,7 +28,7 @@ function fire_ajax_submit() {
     $.ajax({
         type: "POST",
         enctype: 'multipart/form-data',
-        url: "/assemblies/upload",
+        url: urlToSend,
         data: data,
         processData: false, //prevent jQuery from automatically transforming the data into a query string
         contentType: false,

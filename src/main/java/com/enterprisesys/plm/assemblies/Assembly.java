@@ -36,7 +36,6 @@ class Assembly {
     @Getter @Setter
     @Column(name="path")
     @JsonProperty("path")
-    @Lob
     private String path;
 
     public Assembly() { }
