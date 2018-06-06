@@ -1,9 +1,13 @@
 package com.enterprisesys.plm.parts;
 
+import com.enterprisesys.plm.assemblies.Assembly;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -29,10 +33,17 @@ class Part {
     @Column(name="partName")
     private String partName;
 
+//    The Part model contains the @ManyToOne annotation to declare that it has a many-to-one relationship
+//    with the Assembly entity. It also uses the @JoinColumn annotation to declare the foreign key column.
+
     @Getter @Setter
-    @JsonProperty("assemblyName")
-    @Column(name="assemblyName")
-    private String assemblyName;
+//    @ManyToOne
+    @JoinColumn(name = "idAssembly", nullable = false)
+    @JsonIgnore
+//    @JsonIgnoreProperties(ignoreUnknown = true, value = {"assemblyName", "object", "path"})
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Assembly assembly;
 
     public Part() { }
 
@@ -40,16 +51,14 @@ class Part {
         this.idPart = id;
     }
 
-    public Part(String name, String assembly) {
+    public Part(String name) {
         this.partName = name;
-        this.assemblyName = assembly;
     }
 
-    public Part(Integer id, String part, String assembly) {
+    public Part(Integer id, String part) {
         super();
         this.idPart = id;
         this.partName = part;
-        this.assemblyName = assembly;
     }
 
 }

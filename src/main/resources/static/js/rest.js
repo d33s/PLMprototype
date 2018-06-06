@@ -171,7 +171,22 @@ function addToDatabase(addWhat) {
         oElements[this.name] = this.value;
     });
 
+    console.log(oElements);
+
     var sendEqUrl = getSubSiteAddress(addWhat);
+
+    //after modification @ManyToOne
+    if (addWhat === "#Parts") {
+        var domain = window.location.origin;
+        sendEqUrl = "";
+        sendEqUrl += domain;
+        sendEqUrl += "/assemblies/";
+        sendEqUrl += oElements.assemblyName;
+        sendEqUrl += "/parts";
+    }
+
+    console.log(sendEqUrl);
+
     RESTrequest("POST", sendEqUrl, oElements, "", "");
 }
 
@@ -201,10 +216,22 @@ function updateDatabase() {
         jsonToSend[jsonKeys[k]] = jsonValues[k];
     }
 
-    console.log(jsonToSend);
-
     var sendEqUrl = getSubSiteAddress();
     sendEqUrl += this.id;
+
+    //after modification @ManyToOne
+    if (document.getElementById('subSiteName').innerHTML === "#Parts") {
+        var domain = window.location.origin;
+        sendEqUrl = "";
+        sendEqUrl += domain;
+        sendEqUrl += "/assemblies/";
+        sendEqUrl += jsonToSend.idAssembly;
+        sendEqUrl += "/parts/";
+        sendEqUrl += this.id;
+    }
+
+    console.log(jsonToSend);
+    console.log(sendEqUrl);
 
     RESTrequest("PUT", sendEqUrl, jsonToSend, "", "");
 }

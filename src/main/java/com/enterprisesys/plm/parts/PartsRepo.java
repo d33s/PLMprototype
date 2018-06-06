@@ -13,14 +13,13 @@ import java.util.List;
 public interface PartsRepo extends CrudRepository<Part, Integer> {
 
     //add custom methods here by naming them appropriately e.g.:
-    public void deletePartsByAssemblyName(String name);
-    public List<Part> getPartsByAssemblyName(String assemblyName);
+//    public void deletePartsByAssemblyName(String name);
+//    public List<Part> getPartsByAssemblyName(String assemblyName);
 
-    @Modifying(clearAutomatically = true)
-    //jak to zrobic zeby brac z bazki od razu tylko id i nazwe czesci???
-    @Query("select prt from Part prt where prt.assemblyName =:assNam order by prt.partName asc")
-    List<Part> getSortedPartsByAssemblyName(@Param("assNam") String assNam);
+//    @Modifying(clearAutomatically = true)
+//    //jak to zrobic zeby brac z bazki od razu tylko id i nazwe czesci???
+//    @Query("select prt from Part prt where prt.assemblyName =:assNam order by prt.partName asc")
+//    List<Part> getSortedPartsByAssemblyName(@Param("assNam") String assNam);
+
+    List<Part> findByAssemblyIdAssembly(Integer id);
 }
-
-
-
