@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.employees;
+package com.enterprisesys.plm.service;
 
+import com.enterprisesys.plm.model.Employee;
+import com.enterprisesys.plm.repository.EmployeesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

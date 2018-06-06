@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.assemblies;
+package com.enterprisesys.plm.controller;
 
+import com.enterprisesys.plm.model.Assembly;
+import com.enterprisesys.plm.service.AssembliesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;

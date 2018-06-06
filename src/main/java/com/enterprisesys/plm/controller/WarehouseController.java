@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.warehouse;
+package com.enterprisesys.plm.controller;
 
+import com.enterprisesys.plm.model.WarehousePart;
+import com.enterprisesys.plm.service.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;

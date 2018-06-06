@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.warehouse;
+package com.enterprisesys.plm.service;
 
+import com.enterprisesys.plm.model.WarehousePart;
+import com.enterprisesys.plm.repository.WarehouseRepo;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Session;
@@ -26,7 +28,7 @@ public class WarehouseService {
     private static String UPLOADED_FOLDER = dir + "\\src\\main\\resources\\static\\pdf\\";
     private static String UPLOADED_FOLDER_TARGET = dir + "\\target\\classes\\static\\pdf\\";
 
-    class WarehousePartWithoutPdfObj {
+    public class WarehousePartWithoutPdfObj {
         @Getter
         @Setter
         private Integer idPart;
@@ -55,7 +57,7 @@ public class WarehouseService {
         }
     }
 
-    class WarehousePartToModify {
+    public class WarehousePartToModify {
         @Getter
         @Setter
         private Integer idPart;

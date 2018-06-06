@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.assemblies;
+package com.enterprisesys.plm.service;
 
+import com.enterprisesys.plm.model.Assembly;
+import com.enterprisesys.plm.repository.AssembliesRepo;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Session;
@@ -26,7 +28,7 @@ public class AssembliesService {
     private static String UPLOADED_FOLDER = dir + "\\src\\main\\resources\\static\\obj\\";
     private static String UPLOADED_FOLDER_TARGET = dir + "\\target\\classes\\static\\obj\\";
 
-    class AssemblyWithoutObj {
+    public class AssemblyWithoutObj {
         @Getter
         @Setter
         private Integer idAssembly;
@@ -47,7 +49,7 @@ public class AssembliesService {
         }
     }
 
-    class AssemblyToModif {
+    public class AssemblyToModif {
         @Getter
         @Setter
         private Integer idAssembly;

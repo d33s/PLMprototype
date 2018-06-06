@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.orders;
+package com.enterprisesys.plm.controller;
 
+import com.enterprisesys.plm.model.Order;
+import com.enterprisesys.plm.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

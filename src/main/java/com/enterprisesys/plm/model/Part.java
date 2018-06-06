@@ -1,6 +1,5 @@
-package com.enterprisesys.plm.parts;
+package com.enterprisesys.plm.model;
 
-import com.enterprisesys.plm.assemblies.Assembly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -43,7 +42,7 @@ class Part {
 //    @JsonIgnoreProperties(ignoreUnknown = true, value = {"assemblyName", "object", "path"})
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToOne(fetch = FetchType.LAZY)
-    private Assembly assembly;
+    private  Assembly assembly;
 
     public Part() { }
 

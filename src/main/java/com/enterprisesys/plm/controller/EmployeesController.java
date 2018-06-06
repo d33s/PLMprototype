@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.employees;
+package com.enterprisesys.plm.controller;
 
+import com.enterprisesys.plm.model.Employee;
+import com.enterprisesys.plm.service.EmployeesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

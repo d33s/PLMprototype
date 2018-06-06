@@ -1,5 +1,7 @@
-package com.enterprisesys.plm.customers;
+package com.enterprisesys.plm.service;
 
+import com.enterprisesys.plm.model.Customer;
+import com.enterprisesys.plm.repository.CustomersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

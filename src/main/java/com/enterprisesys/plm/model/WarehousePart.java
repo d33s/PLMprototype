@@ -1,4 +1,4 @@
-package com.enterprisesys.plm.warehouse;
+package com.enterprisesys.plm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

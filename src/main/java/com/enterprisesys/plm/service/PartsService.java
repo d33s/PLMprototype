@@ -1,6 +1,7 @@
-package com.enterprisesys.plm.parts;
+package com.enterprisesys.plm.service;
 
-import com.enterprisesys.plm.assemblies.Assembly;
+import com.enterprisesys.plm.model.Part;
+import com.enterprisesys.plm.repository.PartsRepo;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
-package com.enterprisesys.plm.warehouse;
+package com.enterprisesys.plm.repository;
 
+import com.enterprisesys.plm.model.WarehousePart;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

@@ -1,5 +1,6 @@
-package com.enterprisesys.plm.orders;
+package com.enterprisesys.plm.repository;
 
+import com.enterprisesys.plm.model.Order;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
