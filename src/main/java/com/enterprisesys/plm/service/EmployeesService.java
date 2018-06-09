@@ -20,6 +20,12 @@ public class EmployeesService {
         return employees;
     }
 
+    public List<Employee> getAllEmployeesParticipatingInOneOrder(Integer id){
+        List<Employee> employees = new ArrayList<>();
+        employeesRepository.findByOrders_idOrder(id).forEach(employees::add);
+        return employees;
+    }
+
     public Employee getEmployee(Integer id){
         return employeesRepository.findById(id).orElse(null);
     }

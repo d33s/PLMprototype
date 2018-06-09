@@ -46,6 +46,9 @@ function changeFrameContext(operationName) {
                     else if (document.getElementById('subSiteName').innerHTML === "#Warehouse"){
                         addPdfShowOption();
                     }
+                    else if (document.getElementById('subSiteName').innerHTML === "#Parts"){
+                        addPdfShowOption();
+                    }
 
                     if (document.getElementById('subSiteName').innerHTML === "#Parts") {
                         replaceSearchBarWithBetterSearchBar();

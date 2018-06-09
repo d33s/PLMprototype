@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+
+<!DOCTYPE HTML>
+<html lang="pl">
+
+	<head>
+        <link rel="stylesheet" href="../style.css" type="text/css"/>
+        <link rel="stylesheet" href="../fontello/css/fontello.css" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/rest.js"></script>
+        <script type="text/javascript" src="../js/sendingLargeObjects.js"></script>
+        <script type="text/javascript" src="../js/framesChange.js"></script>
+        <script type="text/javascript" src="../js/summaryPageFunctions.js"></script>
+	</head>
+
+	<body style="background-color: #dedede;">
+
+    <div id="iframeContentFull" style="text-align: center;">
+        <div class="summaryDiv100" style="padding: 0">
+            <form action='/orders/all' method='post' id='searchBarFormProject' onsubmit='return false'>
+                <input type='text' name='summaryOrderId' id="summaryOrderInput" style="padding-left: 0; width: calc(70% - 10px)" value='Enter orderId' onfocus="if (this.value==='Enter orderId') this.value='';"/>
+                <button id='btnSubmitSearchBarProject' style="padding-right: 0; width: calc(30% - 10px)" onclick="requestData()">Get Data</button>
+            </form>
+        </div>
+        <div id="leftSide">
+            <div style="clear: both"></div>
+            <div class="summaryDiv100left">Order:</div>
+            <div class="summaryDiv100right" id="summaryOrderId">orderID</div>
+            <div class="summaryDiv100left">Deadline:</div>
+            <div class="summaryDiv100right" id="summaryDate">date</div>
+            <div class="summaryDiv100left">Customer:</div>
+            <div class="summaryDiv100right" id="summaryCustomer">customerName</div>
+            <div class="summaryDiv100left">Assembly:</div>
+            <div class="summaryDiv100right" id="summaryAssembly">assemblyName</div>
+            <div class="summaryDiv100left">Employees:</div>
+            <div class="summaryDiv100right" id="summaryEmployees">employeesList</div>
+            <div class="summaryDiv100left">Status:</div>
+            <div class="summaryDiv100right" id="summaryStatus">status</div>
+        </div>
+        <div id="rightSide">
+            <div class="summaryDiv100" style="border-bottom: 2px dotted #444444;">Complete list of parts:</div>
+            <div class="summaryDiv100" id="summaryTable">tableHere</div>
+        </div>
+
+        <div id="progressBar">
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+            <div class="progressTile"></div>
+        </div>
+    </div>
+
+		
+	</body>
+
+</html>

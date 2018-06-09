@@ -25,8 +25,8 @@ public class WarehouseService {
 
     //Save the uploaded file to this folder
     private final static String dir = System.getProperty("user.dir");
-    private static String UPLOADED_FOLDER = dir + "\\src\\main\\resources\\static\\pdf\\";
-    private static String UPLOADED_FOLDER_TARGET = dir + "\\target\\classes\\static\\pdf\\";
+    private static String UPLOADED_FOLDER = dir + "\\src\\main\\resources\\static\\pdf\\warehouse\\";
+    private static String UPLOADED_FOLDER_TARGET = dir + "\\target\\classes\\static\\pdf\\warehouse\\";
 
     public class WarehousePartWithoutPdfObj {
         @Getter
@@ -137,7 +137,7 @@ public class WarehouseService {
 
         if (!file.isEmpty()) {
             byte[] bytes = file.getBytes();
-            //sapis w src
+            //zapis w src
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
             //zapis w targecie
@@ -152,7 +152,7 @@ public class WarehouseService {
             part.setAvailablePieces(pieces);
             part.setDescription(desc);
             part.setPdf(file.getBytes());
-            part.setPdfPath("../pdf/" + file.getOriginalFilename());
+            part.setPdfPath("../pdf/warehouse/" + file.getOriginalFilename());
         }
         catch (IOException e){
             e.printStackTrace();

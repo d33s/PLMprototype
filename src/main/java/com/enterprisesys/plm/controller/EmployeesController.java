@@ -23,6 +23,11 @@ public class EmployeesController {
         return employeesService.getEmployee(id);
     }
 
+    @RequestMapping("/employees/order/{orderId}")
+    public List<Employee> getAllEmployeesParticipatingInOneOrder(@PathVariable Integer orderId){
+        return employeesService.getAllEmployeesParticipatingInOneOrder(orderId);
+    }
+
     @RequestMapping(value = "/employees", method = RequestMethod.POST)
     public void addEmployee(@RequestBody Employee employee){
         employeesService.addEmployee(employee);

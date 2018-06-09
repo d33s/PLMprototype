@@ -12,6 +12,18 @@ $(document).ready(function () {
         fire_ajax_submit("/warehouse/upload");
     });
 
+    $("#btnSubmitToParts").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+
+        var oElements = {};
+        $('form [name]').each(function () {
+            oElements[this.name] = this.value;
+        });
+
+        fire_ajax_submit("/assemblies/" + oElements.assemblyID + "/parts/upload");
+    });
+
 });
 
 function fire_ajax_submit(urlToSend) {
