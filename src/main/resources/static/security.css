@@ -1,0 +1,13 @@
+html, html>body{
+	background-color: #404040;
+	font-family: 'Lato', sans-serif;
+}
+
+button.btn{
+    background-color: #128870;
+	border-color: #404040
+}
+
+button.btn-block, .form-signin-heading {
+    color: orange;
+}

@@ -4,12 +4,10 @@ import com.enterprisesys.plm.model.Assembly;
 import com.enterprisesys.plm.repository.AssembliesRepo;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -131,14 +129,13 @@ public class AssembliesService {
 
         Assembly assembly = new Assembly();
 //        VERSION WITH SAVING BLOB INTO DB
-            try {
-                assembly.setAssemblyName(name);
-                assembly.setObject(file.getBytes());
-                assembly.setPath("../obj/" + file.getOriginalFilename());
-            }
-            catch (IOException e){
-                e.printStackTrace();
-            }
+        try {
+            assembly.setAssemblyName(name);
+            assembly.setObject(file.getBytes());
+            assembly.setPath("../obj/" + file.getOriginalFilename());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         assembliesRepository.save(assembly);
     }
