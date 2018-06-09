@@ -1,6 +1,7 @@
-package com.enterprisesys.plm.customers;
+package com.enterprisesys.plm.controller;
 
 import com.enterprisesys.plm.model.Customer;
+import com.enterprisesys.plm.service.CustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

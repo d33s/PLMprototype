@@ -17,12 +17,14 @@
         <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
             <div class="tileIFrame">Name:</div>
             <input type="text" name="partName" value="Name" onfocus="if (this.value=='Name') this.value='';"/>
-            <div class="tileIFrame">AssemblyID</div>
-            <input type="text" name="assemblyID" value="AssemblyID" onfocus="if (this.value=='AssemblyID') this.value='';"/>
+            <div class="tileIFrame">Pieces available:</div>
+            <input type="text" name="availablePieces" value="availablePieces" onfocus="if (this.value=='availablePieces') this.value='';"/>
+            <div class="tileIFrame">Description:</div>
+            <input type="text" name="description" value="description" onfocus="if (this.value=='description') this.value='';"/>
             <div class="tileIFrame">Pdf File:</div>
             <input type="file" name="pdf" id="file"/>
             <label for="file" id="fileLabel">Choose a file</label>
-            <input type="submit" value="Submit" id="btnSubmitToParts" class="myButton"/>
+            <input type="submit" value="Submit" id="btnSubmitToWarehouse" class="myButton"/>
         </form>
         <br/>
         <div style="clear:both;"></div>
@@ -37,7 +39,7 @@
         });
 
 	</script>
-
+	
 </body>
 
 </html>

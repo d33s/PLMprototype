@@ -1,11 +1,15 @@
 $("#menu").click(function () {
-    if (document.getElementById("contentFrame").src != "http://localhost:8080/frames/hello.html" && document.getElementById("sidebar").style.display == "none") {
+    var domain = window.location.origin;
+    var domainHello = domain;
+    var domainManage = domain;
+    domainHello += "/frames/hello.html";
+    domainManage += "/frames/summary.html";
+    if ((document.getElementById("contentFrame").src !== domainHello && document.getElementById("contentFrame").src !== domainManage) && document.getElementById("sidebar").style.display === "none") {
         $("#content").animate({'width': '1130px'}, 400, function () {
             $("#sidebar").toggle("slide");
         });
-        //console.log(document.getElementById("sidebar").style.display);
     }
-    else if (document.getElementById("contentFrame").src == "http://localhost:8080/frames/hello.html" && document.getElementById("sidebar").style.display != "none") {
+    else if ((document.getElementById("contentFrame").src === domainHello || document.getElementById("contentFrame").src === domainManage) && document.getElementById("sidebar").style.display !== "none") {
         $("#sidebar").toggle("slide", function () {
             $("#content").animate({'width': '1320px'}, 400);
         });

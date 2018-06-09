@@ -113,7 +113,7 @@ body
 {
 	float: left;
 	height: 25px;
-	width: 130px;
+	width: 110px;
 	font-size: 18px;
 	padding: 10px;
 	border-right: 2px dotted #444444;
@@ -181,7 +181,7 @@ input{
     text-align: center;
 }
 
-.tileIFrame, input[type=text], input[type=file] + label, .myButton, .tableCol, .buttonDel, .button3d, .searchButton, .buttonModify{
+.tileIFrame, input[type=text], input[type=file] + label, .myButton, .tableCol, .buttonDel, .button3d, .searchButton, .buttonModify, .progressTile{
     text-align: center;
     font-size: 12px;
     padding: 12px 0;
@@ -258,7 +258,7 @@ input[type=file]+label:hover{
     cursor: pointer;
 }
 
-.buttonModify{
+.buttonModify, .progressTile{
     border: 2px solid black;
     background-color: greenyellow;
     padding: 12px 0;
@@ -268,6 +268,12 @@ input[type=file]+label:hover{
 .buttonModify:hover{
     background-color: darkolivegreen;
     cursor: pointer;
+}
+
+.progressTile{
+    width: calc(100% / 11 - 10px);
+    background-color: greenyellow;
+    background-color: grey;
 }
 
 .searchButton{
@@ -287,7 +293,7 @@ input[type=file]+label:hover{
     background-color: #dedede;
 }
 
-#btnSubmitSearchBar, #textSearchBar, #selectSearchType{
+#btnSubmitSearchBar, #btnSubmitSearchBarProject, #textSearchBar, #selectSearchType, #selectOrderStatus{
     text-align: center;
     font-size: 12px;
     padding: 12px 0;
@@ -301,13 +307,71 @@ input[type=file]+label:hover{
     color: white;
 }
 
-#selectSearchType{
+#selectSearchType, #selectOrderStatus{
     padding-left: 15px;
 }
 
-#searchBarForm option{
+#searchBarForm option, #selectOrderStatus option{
     padding-left: 15px;
     font-size: 16px;
 }
+
+#rightSide, #leftSide, #progressBar{
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+    height: 465px;
+}
+
+#rightSide{
+    width: 70%;
+}
+
+#leftSide{
+    width: 30%;
+}
+
+#progressBar{
+    clear: both;
+    width: 100%;
+    height: 50px;
+}
+
+.summaryDiv100{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+}
+
+.summaryDiv100right{
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    text-align: right;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 2px dotted #444444;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(50% - 20px);
+}
+
+.summaryDiv100left{
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 2px dotted #444444;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(50% - 20px);
+}
+
 
 

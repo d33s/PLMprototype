@@ -36,9 +36,15 @@ class Assembly {
     @Getter @Setter
     @Column(name="path")
     @JsonProperty("path")
-    @Lob
     private String path;
 
     public Assembly() { }
+
+    public Assembly(Integer idAssembly, String name, byte[] obj, String path) {
+        this.setIdAssembly(idAssembly);
+        this.setAssemblyName(name);
+        this.setObject(obj);
+        this.setPath(path);
+    }
 
 }

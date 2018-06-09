@@ -53,6 +53,15 @@ function getSubSiteAddress(manuallySet){
         case '#Parts':
             sendEqUrl = domain + "/parts/";
             break;
+        case '#Employees':
+            sendEqUrl = domain + "/employees/";
+            break;
+        case '#Warehouse':
+            sendEqUrl = domain + "/warehouse/";
+            break;
+        case '#Project':
+            sendEqUrl = domain + "/orders/";
+            break;
     }
     return sendEqUrl;
 }
@@ -132,7 +141,7 @@ function showTable(jsonRCVD, callback) {
         divTable.appendChild(divCLR2);
     }
 
-    //this makes better search bar work when called from inned frame (table display option)
+    //this makes better search bar work when called from inner frame (table display option)
     frameDoc.getElementById('iframeContentFull').innerHTML = '';
     frameDoc.getElementById('iframeContentFull').appendChild(divTable);
 
@@ -165,7 +174,22 @@ function addToDatabase(addWhat) {
         oElements[this.name] = this.value;
     });
 
+    console.log(oElements);
+
     var sendEqUrl = getSubSiteAddress(addWhat);
+
+    //after modification @ManyToOne
+    // if (addWhat === "#Parts") {
+    //     var domain = window.location.origin;
+    //     sendEqUrl = "";
+    //     sendEqUrl += domain;
+    //     sendEqUrl += "/assemblies/";
+    //     sendEqUrl += oElements.assemblyName;
+    //     sendEqUrl += "/parts";
+    // }
+
+    console.log(sendEqUrl);
+
     RESTrequest("POST", sendEqUrl, oElements, "", "");
 }
 
@@ -195,10 +219,22 @@ function updateDatabase() {
         jsonToSend[jsonKeys[k]] = jsonValues[k];
     }
 
-    console.log(jsonToSend);
-
     var sendEqUrl = getSubSiteAddress();
     sendEqUrl += this.id;
+
+    //after modification @ManyToOne
+    if (document.getElementById('subSiteName').innerHTML === "#Parts") {
+        var domain = window.location.origin;
+        sendEqUrl = "";
+        sendEqUrl += domain;
+        sendEqUrl += "/assemblies/";
+        sendEqUrl += jsonToSend.idAssembly;
+        sendEqUrl += "/parts/";
+        sendEqUrl += this.id;
+    }
+
+    console.log(jsonToSend);
+    console.log(sendEqUrl);
 
     RESTrequest("PUT", sendEqUrl, jsonToSend, "", "");
 }
@@ -240,7 +276,18 @@ function addSearchBar() {
             });
         }
         else {
-            requestDataAndShowDBRecords(idToSearchFor);
+            requestDataAndShowDBRecords(idToSearchFor, function(){
+                addSearchBar();
+                if (document.getElementById('subSiteName').innerHTML === "#Parts") {
+                    addPdfShowOption();
+                }
+                else if (document.getElementById('subSiteName').innerHTML === "#Warehouse") {
+                    addPdfShowOption();
+                }
+                else if (document.getElementById('subSiteName').innerHTML === "#Assemblies") {
+                    addObjShowOption();
+                }
+            });
         }
     });
     divSearchBar.appendChild(searchTile);
@@ -330,6 +377,30 @@ function PopupCenter(url, title, w, h) {
     return wind;
 }
 
+function addPdfShowOption() {
+
+    var frameDoc = document.getElementById("contentFrame").contentWindow.document;
+    var newWidthFinal = "calc(15% - 10px)";
+    frameDoc.getElementsByClassName("tileIFrame")[0].style.width = newWidthFinal;
+    frameDoc.getElementsByClassName("searchButton")[0].style.width = newWidthFinal;
+    for (var l = 0; l < frameDoc.getElementsByClassName('spanRow').length; l++) {
+        frameDoc.getElementsByClassName("spanRow")[l].children[0].style.width = newWidthFinal;
+        var showButton = document.createElement('div');
+        showButton.className = "button3d";
+        showButton.innerHTML = "Show";
+        if (document.getElementById('subSiteName').innerHTML === "#Parts"){
+            showButton.id = frameDoc.getElementsByClassName("spanRow")[l].children[3].innerHTML;
+        }
+        else {
+            showButton.id = frameDoc.getElementsByClassName("spanRow")[l].children[4].innerHTML;
+        }
+        showButton.addEventListener("click", function () {
+            PopupCenter(this.id, '', '900', '500');
+        });
+        frameDoc.getElementsByClassName("spanRow")[l].appendChild(showButton);
+    }
+}
+
 function replaceSearchBarWithBetterSearchBar() {
 
     var frameDoc = document.getElementById("contentFrame").contentWindow.document;
@@ -364,7 +435,8 @@ function replaceSearchBarWithBetterSearchBar() {
     frameContent.insertBefore(divCLR, frameContent.childNodes[1]);
 
     frameDoc.getElementById("selectSearchType").style.width = frameDoc.getElementsByClassName("tileIFrame")[0].style.width;
-    frameDoc.getElementById("textSearchBar").style.width = frameDoc.getElementsByClassName("tableCol")[0].style.width;
+    var properWidth = frameDoc.getElementsByClassName("tableCol")[0].style.width;
+    frameDoc.getElementById("textSearchBar").style.width = "calc("+properWidth+"*2 + 10px)";
     frameDoc.getElementById("btnSubmitSearchBar").style.width = frameDoc.getElementsByClassName("tableCol")[0].style.width;
 
     frameDoc.getElementById('btnSubmitSearchBar').addEventListener('click', submitSearchForm);
@@ -392,6 +464,7 @@ function responseProcessor(rcvd) {
             switch (co) {
                 case "#Show":
                     addSearchBar();
+                    addPdfShowOption();
                     //replaceSearchBarWithBetterSearchBar();
                     break;
                 case "#Delete":
