@@ -34,5 +34,4 @@ public class Part extends AbstractPart{
         this.setPdf(another.getPdf());
         this.setAssembly(another.getAssembly());
     }
-
 }
