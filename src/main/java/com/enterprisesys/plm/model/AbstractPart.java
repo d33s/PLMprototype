@@ -12,28 +12,28 @@ import javax.validation.constraints.NotNull;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbstractPart {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
-    @JsonProperty("idPart")
-    @Column(name="idPart")
-    private Integer idPart;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Getter @Setter
+	@JsonProperty("idPart")
+	@Column(name="idPart")
+	private Integer idPart;
 
-    @NotNull
-    @Getter @Setter
-    @JsonProperty("partName")
-    @Column(name="partName")
-    private String partName;
+	@NotNull
+	@Getter @Setter
+	@JsonProperty("partName")
+	@Column(name="partName")
+	private String partName;
 
-    @Getter @Setter
-    @Column(name="pdfPath")
-    @JsonProperty("pdfPath")
-    private String pdfPath;
+	@Getter @Setter
+	@Column(name="pdfPath")
+	@JsonProperty("pdfPath")
+	private String pdfPath;
 
-    @Getter @Setter
-    @Column(name="pdf")
-    @JsonProperty("pdf")
-    @Lob
-    private byte[] pdf;
+	@Getter @Setter
+	@Column(name="pdf")
+	@JsonProperty("pdf")
+	@Lob
+	private byte[] pdf;
 
 }
